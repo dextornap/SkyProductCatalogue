@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+	<test name="customerDaoTest">
+		<classes>
+			<class name="com.sky.catalogue.dao.CustomerDaoTest" />
+		</classes>
+	</test>
+
+	<test name="locationDaoTest">
+		<classes>
+			<class name="com.sky.catalogue.dao.LocationDaoTest" />
+		</classes>
+	</test>
+
+	<test name="productDaoTest">
+		<classes>
+			<class name="com.sky.catalogue.dao.ProductDaoTest" />
+		</classes>
+	</test>
+
+	<test name="locationServiceTest">
+		<classes>
+			<class name="com.sky.catalogue.service.LocationServiceTest" />
+		</classes>
+	</test>
+
+
+	<test name="customerServiceTest">
+		<classes>
+			<class name="com.sky.catalogue.service.CustomerServiceTest" />
+		</classes>
+	</test>
+
+	<test name="catalogueServiceTest">
+		<classes>
+			<class name="com.sky.catalogue.service.CatalogueServiceTest" />
+		</classes>
+	</test>
+
+	<test name="skyProductCatalogueRestControllerTest">
+		<classes>
+			<class
+				name="com.sky.catalogue.controller.SkyProductCatalogueRestControllerTest" />
+		</classes>
+	</test>
+
+</suite>
