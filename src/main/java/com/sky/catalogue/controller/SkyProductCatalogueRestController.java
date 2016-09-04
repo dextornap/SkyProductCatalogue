@@ -26,6 +26,7 @@ import com.sky.catalogue.service.LocationService;
  *
  */
 @RestController
+@RequestMapping(value = "/services", method = RequestMethod.GET)
 public class SkyProductCatalogueRestController {
 
 	@Autowired
@@ -40,7 +41,7 @@ public class SkyProductCatalogueRestController {
 	 * 
 	 * @return Entity containing list of all locations available
 	 */
-	@RequestMapping(value = "/services/locations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/locations", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Location>> listAllLocations() {
 
 		List<Location> locations = locationService.findAllLocations();
@@ -57,7 +58,7 @@ public class SkyProductCatalogueRestController {
 	 * 
 	 * @return Entity containing a location for given location id
 	 */
-	@RequestMapping(value = "/services/locations/{locationId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/locations/{locationId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Location> getLocation(@PathVariable("locationId") String locationId) {
 
 		Location location = locationService.findLocationById(locationId);
@@ -74,7 +75,7 @@ public class SkyProductCatalogueRestController {
 	 * 
 	 * @return Entity containing list of all customers available
 	 */
-	@RequestMapping(value = "/services/customers", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/customers", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Customer>> listAllCustomers() {
 
 		List<Customer> customers = customerService.findAllCustomers();
@@ -91,7 +92,7 @@ public class SkyProductCatalogueRestController {
 	 * 
 	 * @return Entity containing a customer with given customer id
 	 */
-	@RequestMapping(value = "/services/customers/{customerId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/customers/{customerId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Customer> getCustomer(@PathVariable("customerId") String customerId) {
 
 		Customer customer = customerService.findCustomerById(customerId);
@@ -109,7 +110,7 @@ public class SkyProductCatalogueRestController {
 	 * @return Entity containing list of products available at a given Location
 	 *         with given location id
 	 */
-	@RequestMapping(value = "/services/products/locations/{locationId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/products/locations/{locationId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Product>> getProductsForLocation(@PathVariable("locationId") String locationId) {
 
 		List<Product> products = catelogueService.getProductsForLocation(locationId);
