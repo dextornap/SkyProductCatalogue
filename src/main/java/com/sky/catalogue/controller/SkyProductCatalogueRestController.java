@@ -26,7 +26,7 @@ import com.sky.catalogue.service.LocationService;
  *
  */
 @RestController
-@RequestMapping(value = "/services", method = RequestMethod.GET)
+@RequestMapping(value = "/services")
 public class SkyProductCatalogueRestController {
 
 	@Autowired
