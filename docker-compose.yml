@@ -1,0 +1,6 @@
+skycat:
+  image: tomcat
+  ports:
+    - "8080:8080"
+  volumes:
+     - ./target/SkyProductCatalogue.war:/usr/local/tomcat/webapps/SkyProductCatalogue.war
